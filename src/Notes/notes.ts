@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 //Controladores son rutas o endpoints que la app necesita. (npm run start:dev)
 
 // @Controller()
@@ -40,3 +41,6 @@
 //   ) {
 //     return `product ${productId} from category ${id}`;
 //   }
+//Los pipes tienen la función de validar y/o transformar
+//Los class-validators nos permiten validar los datos mientras se corre el programa.
+
