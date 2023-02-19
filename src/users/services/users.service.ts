@@ -1,8 +1,11 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { user } from '../entities/user.entity';
-import { UpdateUserDto, CreateUserDto } from 'src/DTOs/users.dto';
+import { UpdateUserDto, CreateUserDto } from 'src/users/dtos/users.dto';
+import { order } from '../entities/order.entity';
+import { ProductsService } from 'src/products/services/products.service';
 @Injectable()
 export class UsersService {
+  constructor(private productsService: ProductsService) {}
   private counterId = 1;
   private users: user[] = [
     {
@@ -57,6 +60,15 @@ export class UsersService {
     this.users.splice(index, 1);
     return {
       message: `El usuario numero ${index + 1} ha sido eliminado`,
+    };
+  }
+
+  getOrdersByUsers(id: number): order {
+    const user = this.findOne(id);
+    return {
+      date: new Date(),
+      user,
+      products: this.productsService.findAll(),
     };
   }
 }

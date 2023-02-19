@@ -4,8 +4,8 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { Product } from 'src/entities/product.entity';
-import { CreateProductDto, UpdateProductDto } from 'src/DTOs/products.dto';
+import { Product } from 'src/products/entities/product.entity';
+import { CreateProductDto, UpdateProductDto } from 'src/products/dtos/products.dto';
 @Injectable()
 export class ProductsService {
   private counterId = 2;

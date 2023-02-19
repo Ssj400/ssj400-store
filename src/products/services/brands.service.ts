@@ -1,6 +1,6 @@
 import { Injectable, HttpStatus, HttpException } from '@nestjs/common';
 import { brand } from '../entities/brand.entities';
-import { CreateBrandDto, UpdateBrandDto } from 'src/DTOs/brands.dto';
+import { CreateBrandDto, UpdateBrandDto } from 'src/products/dtos/brands.dto';
 @Injectable()
 export class BrandsService {
   private counterId = 1;

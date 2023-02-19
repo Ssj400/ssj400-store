@@ -7,9 +7,9 @@ import {
   Param,
   Get,
 } from '@nestjs/common';
-import { CreateBrandDto, UpdateBrandDto } from 'src/DTOs/brands.dto';
-import { BrandsService } from 'src/services/brands.service';
-import { ParseIntPipe } from '../common/parse-int/parse-int.pipe';
+import { CreateBrandDto, UpdateBrandDto } from 'src/products/dtos/brands.dto';
+import { BrandsService } from 'src/products/services/brands.service';
+import { ParseIntPipe } from '../../common/parse-int/parse-int.pipe';
 @Controller('brands')
 export class BrandsController {
   constructor(private brandsService: BrandsService) {}

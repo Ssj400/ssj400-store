@@ -7,10 +7,10 @@ import {
   Put,
   Delete,
 } from '@nestjs/common';
-import { CreateCategoryDto, UpdateCategoryDto } from 'src/DTOs/categories.dto';
-import { CategoriesService } from 'src/services/categories.service';
-import { ProductsService } from 'src/services/products.service';
-import { ParseIntPipe } from '../common/parse-int/parse-int.pipe';
+import { CreateCategoryDto, UpdateCategoryDto } from 'src/products/dtos/categories.dto';
+import { CategoriesService } from 'src/products/services/categories.service';
+import { ProductsService } from 'src/products/services/products.service';
+import { ParseIntPipe } from '../../common/parse-int/parse-int.pipe';
 @Controller('categories')
 export class CategoriesController {
   constructor(

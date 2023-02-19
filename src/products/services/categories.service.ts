@@ -1,6 +1,6 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { category } from '../entities/category.entities';
-import { CreateCategoryDto, UpdateCategoryDto } from 'src/DTOs/categories.dto';
+import { CreateCategoryDto, UpdateCategoryDto } from 'src/products/dtos/categories.dto';
 @Injectable()
 export class CategoriesService {
   private counterId = 1;
