@@ -3,9 +3,14 @@ import { user } from '../entities/user.entity';
 import { UpdateUserDto, CreateUserDto } from 'src/users/dtos/users.dto';
 import { order } from '../entities/order.entity';
 import { ProductsService } from 'src/products/services/products.service';
+import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class UsersService {
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    //En vez de inyectar la variable se importa el configmodule que ya la contiene.
+    private configService: ConfigService,
+  ) {}
   private counterId = 1;
   private users: user[] = [
     {
@@ -18,6 +23,10 @@ export class UsersService {
   ];
 
   findAll() {
+    //Nos traemos las variables del .env y las mostramos en consola.
+    const apiKey = this.configService.get('API_KEY');
+    const dbName = this.configService.get('DATABASE_NAME');
+    console.log(apiKey, dbName);
     return this.users;
   }
 
