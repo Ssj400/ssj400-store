@@ -2,7 +2,7 @@ import { IsString, IsNumber, IsNotEmpty } from 'class-validator';
 import { PartialType, ApiProperty } from '@nestjs/swagger';
 export class CreateCustomerDto {
   //Se le puede agregar una descripcion
-  @ApiProperty({ description: 'El nombre del customer'})
+  @ApiProperty({ description: 'El nombre del customer' })
   @IsString()
   @IsNotEmpty()
   readonly customerName: string;
